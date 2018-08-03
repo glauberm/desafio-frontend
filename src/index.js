@@ -1,7 +1,4 @@
-function component() {
-  var element = document.createElement('span');
+import Base from './components/Base';
 
-  return element;
-}
-
-document.getElementById('root').appendChild(component());
+const base = new Base();
+base.render();

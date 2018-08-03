@@ -1,16 +1,19 @@
 const path = require('path');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   'mode': 'development',
-  'entry': './src/index.js',
+  'entry': [
+    'babel-polyfill',
+    './src/index.js'
+  ],
   'output': {
     'path': path.resolve(__dirname + '/dist'),
     'filename': 'bundle.js'
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
+    contentBase: path.join(__dirname, '/dist')
   },
   'module': {
     'rules': [
@@ -35,7 +38,7 @@ module.exports = {
       {
         'test': /\.css$/,
         'use': [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           {
             'loader': 'postcss-loader',
@@ -54,6 +57,11 @@ module.exports = {
     ]
   },
   'plugins': [
+    new MiniCssExtractPlugin({
+      'output': {
+        'filename': path.resolve(__dirname + '/dist/main.css')
+      },
+    }),
     new BrowserSyncPlugin(
       {
         host: 'localhost',
