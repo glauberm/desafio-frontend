@@ -1,0 +1,15 @@
+{
+  "short_name": "QConcursos",
+  "name": "QConcursos (glaubernm@gmail.com)",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#006400",
+  "background_color": "#ffffff"
+}

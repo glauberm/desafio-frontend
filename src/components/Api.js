@@ -13,7 +13,11 @@ class Api {
 
   getUser(user) {
     const url = baseUrl + '/users/' + user;
+    return this.getRequest(url);
+  }
 
+  getRepos(user) {
+    const url = baseUrl + '/users/' + user + '/repos?per_page=5&sort=updated';
     return this.getRequest(url);
   }
 }

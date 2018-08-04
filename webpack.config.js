@@ -1,6 +1,9 @@
 const path = require('path');
+const devMode = process.env.NODE_ENV !== 'production';
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin'); //installed via npm
 
 module.exports = {
   'mode': 'development',
@@ -9,17 +12,17 @@ module.exports = {
     './src/index.js'
   ],
   'output': {
-    'path': path.resolve(__dirname + '/dist'),
-    'filename': 'bundle.js'
+    'path': path.resolve(__dirname, 'dist'),
+    'filename': '[name].[chunkhash:8].js',
   },
   devServer: {
-    contentBase: path.join(__dirname, '/dist')
+    contentBase: path.resolve(__dirname, 'dist')
   },
   'module': {
     'rules': [
       {
         'enforce': 'pre',
-        'test': /\.(js|jsx)$/,
+        'test': /\.js$/,
         'exclude': /node_modules/,
         'use': 'eslint-loader'
       },
@@ -36,7 +39,7 @@ module.exports = {
         }
       },
       {
-        'test': /\.css$/,
+        'test': /\.(css|scss)$/,
         'use': [
           MiniCssExtractPlugin.loader,
           'css-loader',
@@ -45,11 +48,22 @@ module.exports = {
             'options': {
               'ident': 'postcss',
               'plugins': (loader) => [
-                require('postcss-import')(),
+                require('postcss-import')({ root: loader.resourcePath }),
                 require('postcss-cssnext')(),
-                require('autoprefixer')(),
                 require('cssnano')()
               ]
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(png|svg|jpg|gif|json)$/,
+        use: [
+          'file-loader',
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[hash].[ext]'
             }
           }
         ]
@@ -57,10 +71,18 @@ module.exports = {
     ]
   },
   'plugins': [
+    new CleanWebpackPlugin(
+      ['dist']
+    ),
     new MiniCssExtractPlugin({
       'output': {
-        'filename': path.resolve(__dirname + '/dist/main.css')
+        'filename': '[name].[chunkhash:8].css',
       },
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './src/index.html',
+      minify: !devMode
     }),
     new BrowserSyncPlugin(
       {

@@ -10,11 +10,16 @@ class Base {
         })
     );
 
-    let headingOne = document.createElement('h1');
-    headingOne.innerText = user.login;
-    document.getElementById('root').appendChild(headingOne);
+    let userBox = document.createElement('section');
 
-    return headingOne;
+    userBox.innerHTML = (
+      '<h1>' + user.login + '</h1>' +
+      '<p>' + user.followers + '</p>'
+    );
+
+    document.getElementById('root').appendChild(userBox);
+
+    return;
   }
 
   render() {
