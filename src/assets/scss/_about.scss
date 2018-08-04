@@ -1,0 +1,14 @@
+.about {
+  padding: 0 0 1rem;
+  text-align: justify;
+
+  .container {
+    max-width: 600px;
+  }
+
+  &__heading {
+    text-align: center;
+    margin: 0 0 3rem;
+    font-size: 2rem;
+  }
+}

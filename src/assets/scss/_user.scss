@@ -1,0 +1,130 @@
+.user {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: center;
+  background-color: $white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba($black, 0.25);
+
+  &__row {
+    @media (min-width: $medium-breakpoint) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__input {
+    background-color: transparent;
+    border: 1px solid $gray;
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+  }
+
+  &__main {
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+
+    &-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin: 0 auto 0.5rem;
+    }
+
+    &-link {
+      display: block;
+      width: 100%;
+      margin-top: 0.5rem;
+      color: $primary;
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $black;
+      }
+    }
+  }
+
+  &__info {
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex: 2 1 auto;
+    padding-top: 1rem;
+    text-align: left;
+
+    &-form {
+      width: 100%;
+    }
+
+    &-dl {
+      width: 100%;
+    }
+
+    &-dt {
+      font-weight: bold;
+      width: 100px;
+    }
+
+    &-dd {
+      padding: 0;
+      margin: 0;
+      margin-left: 1rem;
+    }
+
+    &-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      @media (min-width: $medium-breakpoint) {
+        flex-wrap: nowrap;
+        width: 100%;
+      }
+    }
+
+    &-btn {
+      margin: 0 0 1rem;
+      padding: 0.5rem 0.75rem;
+      border: 2px solid $primary;
+      border-radius: 4px;
+      color: $primary;
+      background-color: transparent;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      width: 100%;
+      transition: all 0.3s;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $primary;
+        color: $white;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+
+        @media (min-width: $medium-breakpoint) {
+          margin-right: 0;
+        }
+      }
+
+      @media (min-width: $medium-breakpoint) {
+        margin: 0 1rem 0 0;
+      }
+    }
+
+    @media (min-width: $medium-breakpoint) {
+      padding-left: 2rem;
+    }
+  }
+  
+}

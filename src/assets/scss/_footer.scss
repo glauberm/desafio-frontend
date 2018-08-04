@@ -1,0 +1,11 @@
+.footer {
+  background-color: $black;
+  color: $white;
+  text-align: center;
+  padding: 2rem 0;
+
+  &__text {
+    position: relative;
+    top: 2px;
+  }
+}

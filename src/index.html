@@ -12,38 +12,46 @@
 
 <body>
   <header class="header">
-    <h1 class="header__heading">Glauber Mota</h1>
-    <div class="menu">
-      <nav class="menu__nav">
-        <ul>
-          <li>
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#sobre">Sobre</a>
-          </li>
-          <li>
-            <a href="#desafio">Desafio</a>
-          </li>
-        </ul>
-      </nav>
+    <div class="container">
+      <div class="row">
+
+        <h1 class="header__heading">
+          <a class="header__heading-link" href="#">Glauber Mota</a>
+        </h1>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-list-item">
+              <a class="header__nav-link" href="#home">Home</a>
+            </li>
+            <li class="header__nav-list-item">
+              <a class="header__nav-link" href="#sobre">Sobre</a>
+            </li>
+            <li class="header__nav-list-item">
+              <a class="header__nav-link" href="#desafio">Desafio</a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="home" id="home">
-      <header class="home__header">
-        <h2 class="home__heading">Desenvolvedor Front End</h2>
-      </header>
+    <section class="section home" id="home">
+      <div class="home__jumbotron">
+        <header class="home__header">
+          <h2 class="home__heading">Desenvolvedor Front End</h2>
+        </header>
 
-      <span class="home__text">Desafio QConcursos.com</span>
+        <span class="home__text">Desafio QConcursos.com</span>
+      </div>
 
       <footer class="home__footer">
-        <nav class="menu__nav">
-          <ul>
-            <li>
-              <a href="https://github.com/glauberm">
-                <img class="home__img" src="<%= require('./assets/img/github.svg') %>" alt="GitHub" />
+        <nav class="home__footer-nav">
+          <ul class="home__footer-list">
+            <li class="home__footer-list-item">
+              <a class="home__footer-link" href="https://github.com/glauberm">
+                <img class="home__footer-img" src="<%= require('./assets/img/github.svg') %>" alt="GitHub" />
               </a>
             </li>
           </ul>
@@ -51,77 +59,94 @@
       </footer>
     </section>
 
-    <section class="about" id="sobre">
-      <h2 class="h2 about__heading">Sobre</h2>
-      <p class="about__text">
-        Tive a oportunidade de fazer curso técnico de informática integrado ao ensino médio no IF (antigo CEFET), por isso trabalho
-        com desenvolvimento web há muito tempo. No princípio eram adaptações de layouts para pequenos sites e lojas virtuais,
-        mas que me deram uma boa base dos fundamentos da web.
-      </p>
-      <p class="about__text">
-        Desde então, aprofundei e expandi bastante meu conhecimento. Recentemente, pude projetar e desenvolver um sistema sozinho
-        e do zero, em uma experiência na qual eu estive ao mesmo em contato direto com os usuários e com o serviço de hospedagem,
-        e pude aprender sobre o processo de ponta a ponta.
-      </p>
-      <p class="about__text">
-        Atualmente, tenho me interessado cada vez mais por design digital, interface e experiência do usuário, e desenvolvimento
-        front-end em geral. Tenho experimentado com React e AngularJS, e tento ficar sempre atualizado sobre as novas tendênciase
-        tecnologias da área.
-      </p>
+    <section class="section about" id="sobre">
+      <div class="container">
+        <h2 class="h2 about__heading">Sobre</h2>
+        <p class="about__text">
+          Tive a oportunidade de fazer curso técnico de informática integrado ao ensino médio no IF (antigo CEFET), por isso trabalho
+          com desenvolvimento web há muito tempo. No princípio eram adaptações de layouts para pequenos sites e lojas virtuais,
+          mas que me deram uma boa base dos fundamentos da web.
+        </p>
+        <p class="about__text">
+          Desde então, aprofundei e expandi bastante meu conhecimento. Recentemente, pude projetar e desenvolver um sistema sozinho
+          e do zero, em uma experiência na qual eu estive ao mesmo em contato direto com os usuários e com o serviço de hospedagem,
+          e pude aprender sobre o processo de ponta a ponta.
+        </p>
+        <p class="about__text">
+          Atualmente, tenho me interessado cada vez mais por design digital, interface e experiência do usuário, e desenvolvimento
+          front-end em geral. Tenho experimentado com React e AngularJS, e tento ficar sempre atualizado sobre as novas tendênciase
+          tecnologias da área.
+        </p>
+      </div>
     </section>
 
-    <section class="challenge" id="desafio">
-      <header class="challenge__header">
-        <h2 class="challenge__heading">Desafio</h2>
-      </header>
-
-      <section class="user">
-
-        <header class="user__header">
-          <h3 class="h3 user__heading hidden">Usuário</h3>
+    <section class="section challenge" id="desafio">
+      <div class="container">
+        <header class="challenge__header">
+          <h2 class="challenge__heading">Desafio</h2>
         </header>
-        <form class="user__form" action="#desafio" method="get">
-          <input class="user__input" id="user" type="text" placeholder="Insira um nome de usuário" />
-        </form>
-        <div class="user__main">
-          <img class="user__img" src="<%= require('./assets/img/user.svg') %>" alt="Imagem do usuário" id="user-img" />
-          <a class="user__link" href="#" target="__blank" id="user-link">Visitar perfil</a>
-        </div>
-        <div class="user__info">
-          <dl class="user__dl">
-            <dt class="user__dt">Repositórios</dt>
-            <dd class="user__dd" id="repos">0</dd>
-            <dt class="user__dt">Seguidores</dt>
-            <dd class="user__dd" id="followers">0</dd>
-            <dt class="user__dt">Seguindo</dt>
-            <dd class="user__dd" id="following">0</dd>
-          </dl>
-          <a class="user__btn" href="#" target="__blank" id="user-repos-link">Ver repositórios</a>
-          <a class="user__btn" href="#" target="__blank" id="user-starred-link">Ver favoritos</a>
-        </div>
 
-        <section class="repos">
-          <div class="repos__table-wrapper">
-            <header class="repos__header">
-              <h4 class="h4 repos__heading">Lista dos repositórios</h3>
-            </header>
-            <table class="repos__table">
-              <tbody class="repos__tbody" id="repos-tbody">
-                <tr class="repos__table-row">
-                  <td class="repos__table-cell">...</td>
-                </tr>
-              </tbody>
-            </table>
+        <section class="user">
+
+          <header class="user__header">
+            <h3 class="h3 user__heading visually-hidden">Usuário</h3>
+          </header>
+
+          <div class="row user__row">
+
+            <div class="user__main">
+              <img class="user__main-img" src="<%= require('./assets/img/user.svg') %>" alt="Imagem do usuário" id="user-img" />
+              <a class="user__main-link" href="#" target="__blank" id="user-link">Visitar perfil</a>
+            </div>
+            <div class="user__info">
+              <form class="user__info-form" action="#desafio" method="get">
+                <input class="user__input" id="user" type="text" placeholder="Insira um nome de usuário" />
+              </form>
+              <dl class="user__info-dl">
+                <div class="row">
+                  <dt class="user__info-dt">Repositórios</dt>
+                  <dd class="user__info-dd" id="repos">0</dd>
+                </div>
+                <div class="row">
+                  <dt class="user__info-dt">Seguidores</dt>
+                  <dd class="user__info-dd" id="followers">0</dd>
+                </div>
+                <div class="row">
+                  <dt class="user__info-dt">Seguindo</dt>
+                  <dd class="user__info-dd" id="following">0</dd>
+                </div>
+              </dl>
+              <div class="user__info-links">
+                <a class="user__info-btn" href="#" target="__blank" id="user-repos-link">Ver repositórios</a>
+                <a class="user__info-btn" href="#" target="__blank" id="user-starred-link">Ver favoritos</a>
+              </div>
+            </div>
           </div>
+
+          <section class="repos">
+            <div class="repos__table-wrapper">
+              <header class="repos__header">
+                <h4 class="h4 repos__heading">Lista dos repositórios</h3>
+              </header>
+              <table class="repos__table">
+                <tbody class="repos__tbody" id="repos-tbody">
+                  <tr class="repos__table-row--empty">
+                    <td class="repos__table-cell--empty">Nenhum repositório encontrado.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
         </section>
-
-      </section>
+      </div>
     </section>
-
   </main>
 
   <footer class="footer">
-    <span class="footer__text">Desafio Desenvolvedor Front Qconcursos.com</span>
+    <div class="container">
+      <span class="footer__text">Desafio Desenvolvedor Front Qconcursos.com</span>
+    </div>
   </footer>
 </body>
 

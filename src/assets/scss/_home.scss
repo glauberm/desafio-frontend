@@ -1,4 +1,105 @@
 .home {
   background: url('./assets/img/home.jpg') center center no-repeat fixed $black;
   background-size: cover;
+  position: relative;
+  z-index: 0;
+  padding: 0 1rem;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba($black, 0.5);
+    mix-blend-mode: multiply;
+  }
+
+  &__jumbotron {
+    text-align: center;
+    color: $white;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    cursor: default;
+  }
+
+  &__heading {
+    margin: 0 0 1rem;
+    font-size: 2rem;
+    line-height: 1.15;
+
+    @media (min-width: $medium-breakpoint) {
+      margin: 0 0 1.25rem;
+      font-size: 2.5rem;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      margin: 0 0 1.75rem;
+      font-size: 3.5rem;
+    }
+  }
+
+  &__text {
+    font-weight: bold;
+    
+    @media (min-width: $medium-breakpoint) {
+      font-size: 1.15rem;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__footer {
+    display: inline-flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+
+    &-nav {
+      display: inline-flex;
+      padding-bottom: 2rem;
+    }
+
+    &-list {
+      display: inline-flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      &-item {
+        display: inline-flex;
+      }
+    }
+
+    &-link {
+      display: inline-flex;
+      transition: opacity 0.3s;
+
+      &:hover,
+      &:focus,
+      &:active {
+        opacity: .5;
+      }
+    }
+
+    &-img {
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+
+      @media (min-width: $medium-breakpoint) {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
 }

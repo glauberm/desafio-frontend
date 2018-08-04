@@ -1,0 +1,10 @@
+.challenge {
+  background-color: $secondary;
+  text-align: center;
+  padding: 0 0 4rem;
+
+  &__heading {
+    margin: 3rem 0 3rem;
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,40 @@
+.repos {
+  text-align: left;
+  width: 100%;
+  
+  &__table {
+    border-collapse: collapse;
+    width: 100%;
+    &-row {
+      background-color: $tertiary;
+
+      &:nth-child(2n) {
+        background-color: $white;
+      }
+
+      &--empty {
+        background-color: transparent;
+      }
+    }
+
+    &-cell {
+      padding: 0.25rem 0.5rem;
+
+      &--empty {
+        padding: 0;
+      }
+    }
+
+    &-link {
+      color: $primary;
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $black;
+      }
+    }
+  }
+}
