@@ -7,7 +7,7 @@ class Api {
       return await response.json();
     }
     catch (error) {
-      console.log('Erro!' + error);
+      console.log(error);
     }
   }
 

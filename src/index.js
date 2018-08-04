@@ -1,5 +1,5 @@
-import Base from './components/Base';
 import './main.css';
+import User from './components/User';
 
-const base = new Base();
-base.render();
+const user = new User();
+user.render();
