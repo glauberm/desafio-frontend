@@ -57,7 +57,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|svg|jpg|gif|json)$/,
+        test: /\.(png|svg|jpg|gif|json|ico)$/,
         use: [
           'file-loader',
           {
@@ -72,12 +72,16 @@ module.exports = {
   },
   'plugins': [
     new CleanWebpackPlugin(
-      ['dist']
+      ['dist'],
+      {
+        exclude: [
+          'favicon.ico',
+          'manifest.json'
+        ],
+      }
     ),
     new MiniCssExtractPlugin({
-      'output': {
-        'filename': '[name].[chunkhash:8].css',
-      },
+      'filename': '[name].[chunkhash:8].css',
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',

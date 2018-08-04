@@ -5,15 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#006400">
-  <link rel="manifest" href="./manifest.json">
-  <link rel="shortcut icon" href="./favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" href="/favicon.ico">
   <title>QConcursos (glaubernm@gmail.com)</title>
 </head>
 
 <body>
-  <!-- <noscript>
-    Você precisa ativar o JavaScript para executar esse aplicativo.
-  </noscript> -->
   <header class="header">
     <h1 class="header__heading">Glauber Mota</h1>
     <div class="menu">
@@ -81,6 +78,9 @@
         <header class="user__header">
           <h3 class="h3 user__heading visually-hidden">Usuário</h3>
         </header>
+        <form class="user__form" action="#desafio" method="get">
+          <input class="user__input" id="user" type="text" placeholder="Insira um nome de usuário" />
+        </form>
         <a class="user__link" href="#">Visitar perfil</a>
         <dl class="user__dl">
           <dt class="user__dt">Repositórios</dt>
