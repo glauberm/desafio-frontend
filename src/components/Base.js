@@ -5,7 +5,7 @@ const defaultUser = 'glauberm';
 
 class Base {
   render() {
-    this.fillUserInput();
+    // this.fillUserInput();
     const user = new User();
     user.render();
   }

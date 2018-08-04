@@ -311,3 +311,7 @@ body {
   color: #001a00;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+.home {
+  background: url("./assets/img/home.jpg") center center no-repeat fixed #001a00;
+  background-size: cover; }

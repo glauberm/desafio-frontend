@@ -3,7 +3,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin'); //installed via npm
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   'mode': 'development',
@@ -57,15 +57,9 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|svg|jpg|gif|json|ico)$/,
+        test: /\.(png|svg|jpg|gif)$/,
         use: [
-          'file-loader',
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[hash].[ext]'
-            }
-          }
+          'file-loader'
         ]
       }
     ]
@@ -77,7 +71,7 @@ module.exports = {
         exclude: [
           'favicon.ico',
           'manifest.json'
-        ],
+        ]
       }
     ),
     new MiniCssExtractPlugin({
