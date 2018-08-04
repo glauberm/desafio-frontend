@@ -2,20 +2,17 @@ import Api from './Api';
 
 const api = new Api();
 const userInput = document.getElementById('user');
-const reposEl = document.getElementById('repos');
-const followersEl = document.getElementById('followers');
-const followingEl = document.getElementById('following');
+const userLink = document.getElementById('user-link');
+const userReposLink = document.getElementById('user-repos-link');
+const userStarredLink = document.getElementById('user-starred-link');
+const reposDd = document.getElementById('repos');
+const followersDd = document.getElementById('followers');
+const followingDd = document.getElementById('following');
 const reposTbody = document.getElementById('repos-tbody');
 
 class User {
   render() {
     return this.buildUserBox();
-  }
-
-  removeReposRows() {
-
-
-    return;
   }
 
   buildUserBox() {
@@ -35,19 +32,19 @@ class User {
       );
 
       function fillUserFields() {
-        reposEl.innerText = user.public_repos;
-        followersEl.innerText = user.followers;
-        followingEl.innerText = user.following;
+        reposDd.innerText = user.public_repos;
+        followersDd.innerText = user.followers;
+        followingDd.innerText = user.following;
+
+        createUserLinks();
 
         return;
       }
 
-      function removeReposRows() {
-        while (reposTbody.firstChild) {
-          reposTbody.removeChild(reposTbody.firstChild);
-        }
-
-        return;
+      function createUserLinks() {
+        userLink.setAttribute('href', user.html_url);
+        userReposLink.setAttribute('href', user.html_url + '?tab=repositories');
+        userStarredLink.setAttribute('href', user.html_url + '?tab=stars');
       }
 
       function fillReposRows() {
@@ -65,8 +62,15 @@ class User {
         return;
       }
 
+      function removeReposRows() {
+        while (reposTbody.firstChild) {
+          reposTbody.removeChild(reposTbody.firstChild);
+        }
+
+        return;
+      }
+
       fillUserFields();
-      removeReposRows();
       fillReposRows();
     });
   }

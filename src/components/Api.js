@@ -4,7 +4,11 @@ class Api {
   async getRequest(url) {
     try {
       const response = await fetch(url);
-      return await response.json();
+      if (response.ok === true) {
+        return await response.json();
+      } else {
+        return;
+      }
     }
     catch (error) {
       console.log(error);

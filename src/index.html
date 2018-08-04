@@ -23,7 +23,7 @@
             <a href="#sobre">Sobre</a>
           </li>
           <li>
-            <a href="#sobre">Desafio</a>
+            <a href="#desafio">Desafio</a>
           </li>
         </ul>
       </nav>
@@ -81,17 +81,17 @@
         <form class="user__form" action="#desafio" method="get">
           <input class="user__input" id="user" type="text" placeholder="Insira um nome de usuário" />
         </form>
-        <a class="user__link" href="#">Visitar perfil</a>
+        <a class="user__link disabled" href="#" target="__blank" id="user-link">Visitar perfil</a>
         <dl class="user__dl">
           <dt class="user__dt">Repositórios</dt>
-          <dd class="user__dd" id="repos"></dd>
+          <dd class="user__dd" id="repos">0</dd>
           <dt class="user__dt">Seguidores</dt>
-          <dd class="user__dd" id="followers"></dd>
+          <dd class="user__dd" id="followers">0</dd>
           <dt class="user__dt">Seguindo</dt>
-          <dd class="user__dd" id="following"></dd>
+          <dd class="user__dd" id="following">0</dd>
         </dl>
-        <a class="user__btn" href="#">Ver repositórios</a>
-        <a class="user__btn" href="#">Ver favoritos</a>
+        <a class="user__btn disabled" href="#" target="__blank" id="user-repos-link">Ver repositórios</a>
+        <a class="user__btn disabled" href="#" target="__blank" id="user-starred-link">Ver favoritos</a>
 
         <section class="repos">
           <div class="repos__table-wrapper">
