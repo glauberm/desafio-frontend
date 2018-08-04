@@ -76,22 +76,27 @@
       <section class="user">
 
         <header class="user__header">
-          <h3 class="h3 user__heading visually-hidden">Usuário</h3>
+          <h3 class="h3 user__heading hidden">Usuário</h3>
         </header>
         <form class="user__form" action="#desafio" method="get">
           <input class="user__input" id="user" type="text" placeholder="Insira um nome de usuário" />
         </form>
-        <a class="user__link disabled" href="#" target="__blank" id="user-link">Visitar perfil</a>
-        <dl class="user__dl">
-          <dt class="user__dt">Repositórios</dt>
-          <dd class="user__dd" id="repos">0</dd>
-          <dt class="user__dt">Seguidores</dt>
-          <dd class="user__dd" id="followers">0</dd>
-          <dt class="user__dt">Seguindo</dt>
-          <dd class="user__dd" id="following">0</dd>
-        </dl>
-        <a class="user__btn disabled" href="#" target="__blank" id="user-repos-link">Ver repositórios</a>
-        <a class="user__btn disabled" href="#" target="__blank" id="user-starred-link">Ver favoritos</a>
+        <div class="user__main">
+          <img class="user__img" src="" alt="Imagem do usuário" id="user-img" />
+          <a class="user__link" href="#" target="__blank" id="user-link">Visitar perfil</a>
+        </div>
+        <div class="user__info">
+          <dl class="user__dl">
+            <dt class="user__dt">Repositórios</dt>
+            <dd class="user__dd" id="repos">0</dd>
+            <dt class="user__dt">Seguidores</dt>
+            <dd class="user__dd" id="followers">0</dd>
+            <dt class="user__dt">Seguindo</dt>
+            <dd class="user__dd" id="following">0</dd>
+          </dl>
+          <a class="user__btn" href="#" target="__blank" id="user-repos-link">Ver repositórios</a>
+          <a class="user__btn" href="#" target="__blank" id="user-starred-link">Ver favoritos</a>
+        </div>
 
         <section class="repos">
           <div class="repos__table-wrapper">
@@ -101,7 +106,7 @@
             <table class="repos__table">
               <tbody class="repos__tbody" id="repos-tbody">
                 <tr class="repos__table-row">
-                  <td class="repos__table-cell"></td>
+                  <td class="repos__table-cell">...</td>
                 </tr>
               </tbody>
             </table>

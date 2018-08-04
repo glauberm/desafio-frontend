@@ -2,6 +2,7 @@ import Api from './Api';
 
 const api = new Api();
 const userInput = document.getElementById('user');
+const userImg = document.getElementById('user-img');
 const userLink = document.getElementById('user-link');
 const userReposLink = document.getElementById('user-repos-link');
 const userStarredLink = document.getElementById('user-starred-link');
@@ -32,23 +33,18 @@ class User {
       );
 
       function fillUserFields() {
+        userImg.setAttribute('src', user.avatar_url);
+        userLink.setAttribute('href', user.html_url);
         reposDd.innerText = user.public_repos;
         followersDd.innerText = user.followers;
         followingDd.innerText = user.following;
-
-        createUserLinks();
+        userReposLink.setAttribute('href', user.html_url + '?tab=repositories');
+        userStarredLink.setAttribute('href', user.html_url + '?tab=stars');
 
         return;
       }
 
-      function createUserLinks() {
-        userLink.setAttribute('href', user.html_url);
-        userReposLink.setAttribute('href', user.html_url + '?tab=repositories');
-        userStarredLink.setAttribute('href', user.html_url + '?tab=stars');
-      }
-
       function fillReposRows() {
-        removeReposRows(reposTbody);
         let html = '';
         Object.keys(repos).map((key) => {
           html += '<tr class="repos__table-row">';
@@ -58,14 +54,6 @@ class User {
           html += '</a></td></tr>';
         });
         reposTbody.innerHTML = html;
-
-        return;
-      }
-
-      function removeReposRows() {
-        while (reposTbody.firstChild) {
-          reposTbody.removeChild(reposTbody.firstChild);
-        }
 
         return;
       }
