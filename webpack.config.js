@@ -57,22 +57,28 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|ico)$/,
         use: [
           'file-loader'
+        ]
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          'file-loader'
+        ]
+      },
+      {
+        test: /\.xml$/,
+        use: [
+          'xml-loader'
         ]
       }
     ]
   },
   'plugins': [
     new CleanWebpackPlugin(
-      ['dist'],
-      {
-        exclude: [
-          'favicon.ico',
-          'manifest.json'
-        ]
-      }
+      ['dist']
     ),
     new MiniCssExtractPlugin({
       'filename': '[name].[chunkhash:8].css',

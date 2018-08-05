@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#006400">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="manifest" href="<%= require('./assets/manifest.json') %>">
+  <link rel="shortcut icon" href="<%= require('./assets/img/favicon.ico') %>">
   <title>QConcursos (glaubernm@gmail.com)</title>
 </head>
 
@@ -14,7 +14,6 @@
   <header class="header">
     <div class="container">
       <div class="row header__row">
-
         <h1 class="header__heading">
           <a class="header__heading-link" href="#">Glauber Mota</a>
         </h1>
@@ -50,7 +49,7 @@
         <nav class="home__footer-nav">
           <ul class="home__footer-list">
             <li class="home__footer-list-item">
-              <a class="home__footer-link" href="https://github.com/glauberm">
+              <a class="home__footer-link" href="https://github.com/glauberm" target="__blank">
                 <img class="home__footer-img" src="<%= require('./assets/img/github.svg') %>" alt="GitHub" />
               </a>
             </li>
@@ -64,7 +63,7 @@
         <h2 class="h2 about__heading">Sobre</h2>
         <p class="about__text">
           Tive a oportunidade de fazer curso técnico de informática integrado ao ensino médio no IF (antigo CEFET), por isso trabalho
-          com desenvolvimento web há muito tempo. No princípio eram adaptações de layouts para pequenos sites e lojas virtuais,
+          com desenvolvimento web há algum tempo. No princípio eram adaptações de layouts para pequenos sites e lojas virtuais,
           mas que me deram uma boa base dos fundamentos da web.
         </p>
         <p class="about__text">
@@ -74,8 +73,8 @@
         </p>
         <p class="about__text">
           Atualmente, tenho me interessado cada vez mais por design digital, interface e experiência do usuário, e desenvolvimento
-          front-end em geral. Tenho experimentado com React e AngularJS, e tento ficar sempre atualizado sobre as novas tendênciase
-          tecnologias da área.
+          front-end em geral. Tenho experimentado com React e AngularJS, e tento ficar sempre atualizado sobre as novas tendências
+          e tecnologias da área.
         </p>
       </div>
     </section>
@@ -95,8 +94,10 @@
           <div class="row user__row">
 
             <div class="user__main">
-              <img class="user__main-img" src="<%= require('./assets/img/user.svg') %>" alt="Imagem do usuário" id="user-img" />
-              <a class="user__main-link" href="#" target="__blank" id="user-link">Visitar perfil</a>
+              <a class="user__main-link" href="#" target="__blank" id="user-link">
+                <img class="user__main-img" src="<%= require('./assets/img/user.svg') %>" alt="Imagem do usuário" id="user-img" />
+                <span>Visitar perfil</span>
+              </a>
             </div>
             <div class="user__info">
               <form class="user__info-form" action="#desafio" method="get">

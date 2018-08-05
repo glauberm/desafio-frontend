@@ -4,6 +4,7 @@
   position: relative;
   z-index: 0;
   padding: 0 1rem;
+  overflow: hidden;
 
   &:after {
     content: '';
@@ -48,7 +49,7 @@
   &__text {
     font-weight: bold;
     animation-name: fade-in-lg, zoom-out-lg;
-    animation-duration: 0.75s;
+    animation-duration: 1s;
     animation-timing-function: ease-out;
     
     @media (min-width: $medium-breakpoint) {
@@ -89,8 +90,8 @@
     &-link {
       display: inline-flex;
       transition: opacity 0.3s;
-      animation-name: fade-in-lg;
-      animation-duration: 1s;
+      animation-name: fade-in-lg, slide-in-up;
+      animation-duration: 1.5s;
       animation-timing-function: ease-out;
 
       &:hover,

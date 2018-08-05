@@ -8,8 +8,8 @@
   padding-right: 0.5rem;
   height: 80px;
   z-index: 3;
-  animation-name: fade-in-lg;
-  animation-duration: 1s;
+  animation-name: fade-in-lg, slide-in-bottom;
+  animation-duration: 1.5s;
   animation-timing-function: ease-out;
 
   &__row {
@@ -49,20 +49,20 @@
     &-list {
       display: flex;
       flex-direction: row;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       margin: 0;
       padding: 0;
       list-style: none;
 
       &-item {
-        margin-right: 1.5rem;
+        margin-left: 1.5rem;
 
         @media (min-width: $medium-breakpoint) {
-          margin-right: 3rem;
+          margin-left: 3rem;
         }
 
-        &:last-child {
-          margin-right: 0;
+        &:first-child {
+          margin-left: 0;
         }
       }
     }
