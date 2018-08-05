@@ -30,6 +30,9 @@
     margin: 0 0 1rem;
     font-size: 2rem;
     line-height: 1.15;
+    animation-name: fade-in, zoom-out;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
 
     @media (min-width: $medium-breakpoint) {
       margin: 0 0 1.25rem;
@@ -44,6 +47,9 @@
 
   &__text {
     font-weight: bold;
+    animation-name: fade-in-lg, zoom-out-lg;
+    animation-duration: 0.75s;
+    animation-timing-function: ease-out;
     
     @media (min-width: $medium-breakpoint) {
       font-size: 1.15rem;
@@ -83,6 +89,9 @@
     &-link {
       display: inline-flex;
       transition: opacity 0.3s;
+      animation-name: fade-in-lg;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
 
       &:hover,
       &:focus,
