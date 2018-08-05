@@ -13,3 +13,8 @@ Para ver online: [https://glauberm.github.io/qconcursos/](https://glauberm.githu
 - POSTCSS
 - SASS
 - BrowserSync
+
+## Coisas que eu faria se tivesse mais tempo
+
+- Div de alerta de carregamento e falha na requisação da API
+- Header fixo to topo na tela
