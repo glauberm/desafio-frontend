@@ -1,5 +1,4 @@
 const path = require('path');
-const devMode = process.env.NODE_ENV !== 'production';
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -68,19 +67,11 @@ module.exports = {
           'file-loader'
         ]
       },
-      {
-        test: /\.xml$/,
-        use: [
-          'xml-loader'
-        ]
-      }
     ]
   },
   'plugins': [
     new CleanWebpackPlugin(
-      ['dist'], {
-        exclude: ['manifest.json'],
-      }
+      ['dist']
     ),
     new MiniCssExtractPlugin({
       'filename': '[name].[chunkhash:8].css',
@@ -88,7 +79,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.html',
-      minify: devMode
+      minify: true
     }),
     new BrowserSyncPlugin(
       {

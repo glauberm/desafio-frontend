@@ -4,8 +4,7 @@
 /node_modules
 
 # production
-/dist/*
-!/dist/manifest.json
+/dist
 src/assets/scss/**/*.css
 
 # misc
