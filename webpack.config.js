@@ -78,7 +78,9 @@ module.exports = {
   },
   'plugins': [
     new CleanWebpackPlugin(
-      ['dist']
+      ['dist'], {
+        exclude: ['manifest.json'],
+      }
     ),
     new MiniCssExtractPlugin({
       'filename': '[name].[chunkhash:8].css',
@@ -86,7 +88,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.html',
-      minify: !devMode
+      minify: devMode
     }),
     new BrowserSyncPlugin(
       {
